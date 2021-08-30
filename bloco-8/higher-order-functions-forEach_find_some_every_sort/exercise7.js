@@ -85,6 +85,7 @@ function authorUnique() {
   return noDupes;
 }
 
+// elegante
 /* function authorUnique() {
   // Reference:
   // - https://stackoverflow.com/a/32122760
@@ -92,6 +93,15 @@ function authorUnique() {
 
   elements = books.map(book => book.author.birthYear);
   return elements.every((value, index, self) => self.indexOf(value) === index);
+}
+
+//super elegante
+/* function authorUnique() {
+  // Reference:
+  // - https://stackoverflow.com/a/68933630
+
+  e = books.map(b => b.author.birthYear);
+  return !e.some((v, i) => e.indexOf(v) < i);
 } */
 
 assert.strictEqual(authorUnique(), expectedResult);
